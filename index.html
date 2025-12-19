@@ -46,8 +46,11 @@
       </div>
   </div>
 </div>
+<img src="./person-circle.svg" alt="logo" height="30px" width="100px">
+<img src="./bag-fill.svg" alt="logo" height="30px" width="100px">
 </nav>
 </div>
+<div class="container mt-4">
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -65,10 +68,34 @@
       <img src="./ad3.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
+</div>
+</div>
+
+
   <div class="container">
-  <div class="row">
-    <div class="col-6 col-sm-2">
-  <div class="card">
+    <button class="btn btn-primary mt-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filters</button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <img src="./shirt offer.jpg" alt="off" height="280px" style="padding-left: 50px;">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Filters</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+  <h6>customer rating</h6>
+  <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+  <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+  <label class="btn btn-outline-success" for="vbtn-radio1">4*above</label>
+  <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+  <label class="btn btn-outline-warning" for="vbtn-radio2">3*above</label>
+  <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+  <label class="btn btn-outline-danger" for="vbtn-radio3">2*above</label>
+</div>
+</div>
+</div>
+  <div class="row justify-content-between mt-4" >
+    <div class="col-3 col-sm-2">
+  <div class="card" style="width: 12rem;">
   <img src="./shirt.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">formal-shirt</h5>
@@ -78,30 +105,47 @@
   </div>
 </div>
 </div>
-<div class="col-6 col-sm-2">
-<div class="card">
+<div class="col-3 col-sm-2">
+<div class="card" style="width: 12rem;">
   <img src="./pants.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">polo-fit</h5>
     <p class="card-text">formal</p>
     <hr>
-    <a href="#" class="btn btn-primary">buy now</a>
+    <button type="button" class="btn btn-primary" id="liveToastBtn">order now</button>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      ordered successfully!
+    </div>
+  </div>
+</div>
   </div>
 </div>
 </div>
-<div class="col-6 col-sm-2">
-<div class="card">
+<div class="col-3 col-sm-2">
+<div class="card" style="width: 12rem;">
   <img src="./tshirt.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">3\4 T-shirt</h5>
     <p class="card-text">formal</p>
-    <hr>
+    <hr><span class="position-absolute top-50 start-50 translate-middle badge rounded-pill bg-danger">
+    3 T-shirt only left
+    <span class="visually-hidden">unread messages</span>
+  </span>
     <a href="#" class="btn btn-primary">buy now</a>
   </div>
 </div>
 </div>
-<div class="col-6 col-sm-2">
-<div class="card">
+<div class="col-3 col-sm-2">
+<div class="card" style="width: 12rem;">
   <img src="./shoe.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">white-shoe</h5>
@@ -113,6 +157,10 @@
 </div>
 </div>
 </div>
-  <script src="bootstrap.bundle.js"></script>
-</body>
+<script>
+  const toastElList = document.querySelectorAll('.toast')
+const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, option))
+</script>
+<script src="bootstrap.bundle.js"></script>
+ </body>
 </html>
