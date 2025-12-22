@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urban Ridge</title>
      <link rel="stylesheet" href="./bootstrap.min.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid ">
     <img src="./men.jpg" alt="logo" height="100px" width="100px">
     <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -49,7 +50,6 @@
 <img src="./person-circle.svg" alt="logo" height="30px" width="100px">
 <img src="./bag-fill.svg" alt="logo" height="30px" width="100px">
 </nav>
-</div>
 <div class="container mt-4">
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -74,7 +74,6 @@
 
   <div class="container">
     <button class="btn btn-primary mt-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filters</button>
-
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
   <img src="./shirt offer.jpg" alt="off" height="280px" style="padding-left: 50px;">
   <div class="offcanvas-header">
@@ -92,42 +91,70 @@
   <label class="btn btn-outline-danger" for="vbtn-radio3">2*above</label>
 </div>
 </div>
+<h3>Offers</h3>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    Special Price
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">
+Buy More, Save More
+  </label>
+</div>
 </div>
   <div class="row justify-content-between mt-4" >
-    <div class="col-6 col-sm-2">
-  <div class="card" style="width: 12rem;">
+<div class="col-6 col-sm-2 mt-3">
+<div class="card" style="width: 12rem;">
   <img src="./shirt.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">formal-shirt</h5>
-    <p class="card-text">casual look</p>
-    <hr>
-    <a href="#" class="btn btn-primary">buy now</a>
+    <h5 class="card-title">shirt</h5>
+    <p class="card-text">formal</p>
+    <hr><span class="position-absolute top-50 start-50 translate-middle badge rounded-pill bg-danger">
+    3 T-shirt only left
+    <span class="visually-hidden">unread messages</span>
+  </span>
+    <button type="button" class="btn btn-primary" id="liveToastBtn">order now</button>
+      <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            your order is placed successfully!
+          </div>
+        </div>
+      </div>
   </div>
 </div>
 </div>
 <div class="col-6 col-sm-2">
-<div class="card" style="width: 12rem;">
+<div class="card mt-3" style="width: 12rem;">
   <img src="./pants.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">polo-fit</h5>
     <p class="card-text">formal</p>
     <hr>
-    <button type="button" class="btn btn-primary" id="liveToastBtn">order now</button>
-
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      ordered successfully!
-    </div>
-  </div>
+ <button type="button" class="btn btn-primary" id="liveToastBtn">order now</button>
+      <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            your order is placed successfully!
+          </div>
+        </div>
+      </div>
 </div>
-  </div>
 </div>
 </div>
 <div class="col-6 col-sm-2 mt-3">
@@ -140,7 +167,20 @@
     3 T-shirt only left
     <span class="visually-hidden">unread messages</span>
   </span>
-    <a href="#" class="btn btn-primary">buy now</a>
+    <button type="button" class="btn btn-primary" id="liveToastBtn">order now</button>
+      <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            your order is placed successfully!
+          </div>
+        </div>
+      </div>
   </div>
 </div>
 </div>
@@ -151,16 +191,37 @@
     <h5 class="card-title">white-shoe</h5>
     <p class="card-text">formal</p>
     <hr>
-    <a href="#" class="btn btn-primary">buy now</a>
+    <button type="button" class="btn btn-primary" id="liveToastBtn">order now</button>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      your order is placed successfully!
+    </div>
+  </div>
+</div>
   </div>
 </div>
 </div>
 </div>
 </div>
-<script>
-  const toastElList = document.querySelectorAll('.toast')
-const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, option))
-</script>
+
 <script src="bootstrap.bundle.js"></script>
+<script>
+   const toastTrigger = document.getElementById('liveToastBtn')
+const toastLiveExample = document.getElementById('liveToast')
+
+if (toastTrigger) {
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+  toastTrigger.addEventListener('click', () => {
+    toastBootstrap.show()
+  })
+}
+</script>
  </body>
 </html>
